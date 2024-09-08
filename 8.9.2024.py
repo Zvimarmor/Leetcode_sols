@@ -19,6 +19,8 @@ class Solution(object):
             head = head.next
         
         if length == 0:
+            for i in range(k):
+                answer.append(None)
             return answer
 
         array_length = length // k
@@ -35,20 +37,22 @@ class Solution(object):
             return answer
 
         index = 0
-        while index < length:
-            for j in range(array_length)
+        while left_k > 0:
+            head = ListNode()
+            prev = head
+            for j in range(array_length):
                 node = ListNode(val= vals[index])
                 prev.next = node
                 index += 1
+                prev = prev.next
             if array_spare != 0:
-                node= ListNode(val = vals[i])
+                node= ListNode(val = vals[index])
                 prev.next = node
                 index += 1
                 array_spare -= 1
-            answer.append(head)
-
-        for i in range(left_k):
-            answer.append(None)
+                prev = prev.next
+            answer.append(head.next)
+            left_k -= 1
 
         return answer
 
