@@ -7,9 +7,10 @@ class Solution(object):
         """
         length = len(words)
         answer = 0
+        allowed = set(allowed)
         for i in range(length):
             word_ind = True
-            for char in words[i]:
+            for char in set(words[i]):
                 if char not in allowed:
                     word_ind = False
             if word_ind:
