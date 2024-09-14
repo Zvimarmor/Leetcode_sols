@@ -15,8 +15,9 @@ class Solution(object):
                 if current>answer:
                     answer = current
                 current = 0
+
         if current > answer:
-            answer = current
+            return current
 
         return answer
 
