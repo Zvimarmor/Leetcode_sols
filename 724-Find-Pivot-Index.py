@@ -5,6 +5,9 @@ class Solution(object):
         :rtype: int
         \\\
         length = len(nums)
+        if length == 1:
+            return 0
+        
         for i in range(length):
             if sum(nums[:i]) == sum(nums[i+1:]):
                 return i
