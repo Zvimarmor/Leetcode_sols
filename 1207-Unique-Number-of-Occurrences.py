@@ -7,6 +7,9 @@ class Solution(object):
         length = len(arr)
         ansdict = dict()
 
+        if length == 1:
+            return True
+
         for i in range(length):
             if arr[i] in ansdict.keys():
                 ansdict[arr[i]] += 1
