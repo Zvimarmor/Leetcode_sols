@@ -8,7 +8,7 @@ class Solution(object):
         length = len(s)
 
         for i in range(length):
-            if s[i] == '*':
+            if s[i] in ['*']:
                 answer = answer[:-1]
                 i += 1
             else:
