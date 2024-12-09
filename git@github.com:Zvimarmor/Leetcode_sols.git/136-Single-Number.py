@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: int
         \\\
         answer = 0
-        # length = len(nums)
+        length = len(nums)
 
         for i in range(length):
             answer ^= nums[i]
