@@ -5,20 +5,16 @@ class Solution(object):
         :type target: int
         :rtype: int
         \\\
-        length = len(nums)
-        def helper(nums,start,end,target):
-            i = start + (end - start) // 2
-            print(start,end,i)
-            if start >= end:
-                return start
-            if nums[i] == target:
-                return i
-            elif nums[i] > target:
-                return helper(nums,start,i,target)
-            elif nums[i] < target:
-                return helper(nums,i+1,end,target)
+        start, end = 0, len(nums)
 
-        return helper(nums,0,length,target)
+        while start < end:
+            mid = start + (end - start) // 2
             
+            if nums[mid] == target:
+                return mid
+            elif nums[mid] < target:
+                start = mid + 1
+            else:
+                end = mid
 
-        
+        return start
